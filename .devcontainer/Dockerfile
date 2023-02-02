@@ -7,5 +7,6 @@ RUN apt-get update \
         zsh \
         curl \
         ca-certificates \
+        openssh-client \
     && rm -rf /var/lib/apt/lists/* \
     && chsh -s /bin/zsh
