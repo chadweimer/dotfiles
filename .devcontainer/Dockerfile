@@ -9,4 +9,6 @@ RUN apt-get update \
         ca-certificates \
         openssh-client \
     && rm -rf /var/lib/apt/lists/* \
-    && chsh -s /bin/zsh
+    && useradd -ms /bin/zsh vscode
+
+USER vscode
