@@ -1,0 +1,5 @@
+include /usr/share/nano-syntax-highlighting/*.nanorc
+
+set linenumbers
+set smarthome
+set tabsize 2
