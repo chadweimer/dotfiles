@@ -6,7 +6,7 @@ pkginst () {
     if test $(which pacman); then
         pacman -yS $*
     elif test $(which apt-get); then
-        apt-get install -y $*
+        apt-get update && apt-get install -y $*
     elif test $(which dnf); then
         dnf install -y $*
     elif test $(which yum); then
@@ -18,5 +18,5 @@ pkginst () {
 
 # Install xclip
 if ! test $(which xclip); then
-    pkginst xclip
+   pkginst xclip
 fi
