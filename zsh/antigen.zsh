@@ -1,4 +1,4 @@
-antigen bundle extract
+antigen bundle robbyrussell/oh-my-zsh plugins/extract
 antigen bundle marlonrichert/zsh-autocomplete@main
 antigen bundle supercrabtree/k
 antigen bundle unixorn/autoupdate-antigen.zshplugin

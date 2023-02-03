@@ -20,8 +20,6 @@ fi
 [[ -f ~/.antigen.zsh ]] ||
   curl -L git.io/antigen > ~/.antigen.zsh
 source ~/.antigen.zsh
-# make sure Oh My Zsh plugins can be used from topics
-antigen use oh-my-zsh
 
 # all of our zsh files
 typeset -U config_files

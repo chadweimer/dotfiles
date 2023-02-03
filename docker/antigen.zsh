@@ -1,2 +1,2 @@
-antigen bundle docker
-antigen bundle docker-compose
+antigen bundle robbyrussell/oh-my-zsh plugins/docker
+antigen bundle robbyrussell/oh-my-zsh plugins/docker-compose
