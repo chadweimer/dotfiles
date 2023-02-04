@@ -1,4 +1,4 @@
-include /usr/share/nano-syntax-highlighting/*.nanorc
+include ~/.nano/*.nanorc
 
 set linenumbers
 set smarthome
