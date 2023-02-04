@@ -2,7 +2,7 @@ antigen bundle robbyrussell/oh-my-zsh plugins/extract
 antigen bundle marlonrichert/zsh-autocomplete@main
 antigen bundle supercrabtree/k
 antigen bundle unixorn/autoupdate-antigen.zshplugin
-antigen bundle zdharma-continuum/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
-#antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-syntax-highlighting
