@@ -1,6 +1,3 @@
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export CLICOLOR=true
-
 fpath=($ZSH/functions $fpath)
 
 autoload -U $ZSH/functions/*(:t)
@@ -77,3 +74,17 @@ bindkey '^[[B' history-substring-search-down
 if [[ "${terminfo[kcud1]}" != "" ]]; then
   bindkey "$terminfo[kcud1]" history-substring-search-down
 fi
+
+# Color man pages
+export LESS_TERMCAP_mb=$'\E[01;32m'
+export LESS_TERMCAP_md=$'\E[01;32m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;47;34m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;36m'
+export LESS=-R
+
+# Color LS
+export CLICOLOR=true
+eval "$(dircolors -b)"
