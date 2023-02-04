@@ -1,11 +1,12 @@
 #!/bin/sh
 
-mkdir -p ~/.tmp
-wget -O ~/.tmp/nanorc.zip https://github.com/scopatz/nanorc/archive/master.zip
-mkdir -p ~/.nano/
+if [ -d ~/.nano ]; then
+    cd ~/.nano
+    if test $(git rev-parse --is-inside-work-tree 2> /dev/null); then
+        git pull --force
+    fi
+else
+    git clone https://github.com/scopatz/nanorc ~/.nano
+fi
 
-cd ~/.nano/ || exit
-unzip -o ~/.tmp/nanorc.zip
-mv nanorc-master/* ./
-rm -rf nanorc-master
-rm ~/.tmp/nanorc.zip
+exit 0
