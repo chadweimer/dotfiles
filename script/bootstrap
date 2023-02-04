@@ -52,6 +52,12 @@ link_file () {
   local overwrite= backup= skip=
   local action=
 
+  local dst_dir=$(dirname $dst)
+
+  if [ ! -d $dst_dir ] ; then
+    mkdir -p $dst_dir
+  fi
+
   if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
   then
 
@@ -129,6 +135,7 @@ install_dotfiles () {
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
+    dst="${dst//__/\/}"
     link_file "$src" "$dst"
   done
 }
