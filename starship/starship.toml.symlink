@@ -41,6 +41,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [directory]
+format = '\[[$path]($style)[$read_only]($read_only_style)\]'
 style = "bold #50fa7b"
 
 [docker_context]
@@ -88,6 +89,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol$branch]($style)\]'
 
 [hostname]
+format = '\[[$ssh_symbol$hostname]($style)\]'
 style = "bold #bd93f9"
 
 [java]
