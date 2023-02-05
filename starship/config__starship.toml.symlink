@@ -1,6 +1,86 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+format = """
+\\[$username$hostname\\]\
+$localip\
+$shlvl\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$singularity\
+$kubernetes\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$line_break\
+$character"""
+
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 style = "bold #ffb86c"
@@ -28,6 +108,10 @@ format = '\[[$symbol($version)]($style)\]'
 [conda]
 format = '\[[$symbol$environment]($style)\]'
 
+[container]
+disabled = true
+format = '\[[$symbol $name]($style)\]'
+
 [crystal]
 format = '\[[$symbol($version)]($style)\]'
 
@@ -41,7 +125,7 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [directory]
-format = '\[[$path]($style)[$read_only]($read_only_style)\]'
+format = '\[[(📁 $path)]($style)[$read_only]($read_only_style)\]'
 style = "bold #50fa7b"
 
 [docker_context]
@@ -89,7 +173,8 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol$branch]($style)\]'
 
 [hostname]
-format = '\[[$ssh_symbol$hostname]($style)\]'
+format = '[$ssh_symbol$hostname]($style)'
+ssh_symbol = '@'
 style = "bold #bd93f9"
 
 [java]
@@ -185,7 +270,8 @@ format = '\[[$symbol$workspace]($style)\]'
 format = '\[[$time]($style)\]'
 
 [username]
-format = '\[[$user]($style)\]'
+format = '[$user]($style)'
+show_always = true
 style_user = "bold #8be9fd"
 
 [vagrant]
