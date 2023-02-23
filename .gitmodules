@@ -10,3 +10,5 @@
 [submodule "docker-zsh-completion"]
 	path = modules/docker-zsh-completion
 	url = https://github.com/greymd/docker-zsh-completion.git
+[submodule "modules/zsh-syntax-highlighting"]
+	path = modules/zsh-syntax-highlighting

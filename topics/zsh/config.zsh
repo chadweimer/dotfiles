@@ -65,6 +65,7 @@ bindkey '^H' backward-kill-word                                 # delete previou
 bindkey '^[[Z' undo                                             # Shift+tab undo last action
 
 # Use history substring search
+source $ZSH/modules/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys to history substring search
 bindkey '^[[A' history-substring-search-up
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
@@ -88,3 +89,7 @@ export LESS=-R
 # Color LS
 export CLICOLOR=true
 eval "$(dircolors -b)"
+
+# More completions and autosuggestion
+source $ZSH/modules/zsh-completions/zsh-completions.plugin.zsh
+source $ZSH/modules/zsh-autosuggestions/zsh-autosuggestions.zsh
