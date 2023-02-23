@@ -1,12 +1,12 @@
 [submodule "zsh-completions"]
-	path = zsh-completions
+	path = modules/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "zsh-autosuggestions"]
-	path = zsh-autosuggestions
+	path = modules/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "zsh-history-substring-search"]
-	path = zsh-history-substring-search
+	path = modules/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
 [submodule "docker-zsh-completion"]
-	path = docker-zsh-completion
+	path = modules/docker-zsh-completion
 	url = https://github.com/greymd/docker-zsh-completion.git
