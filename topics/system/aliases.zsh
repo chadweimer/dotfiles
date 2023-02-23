@@ -1,5 +1,8 @@
 # Make ls better
-alias ls='ls -h --color --group-directories-first'
-alias ll='ls -lh --color --group-directories-first'
-alias la='ls -a --color --group-directories-first'
-alias lla='ls -lah --color --group-directories-first'
+alias ls='ls -Fh --color --group-directories-first'
+alias ll='ls -Flh --color --group-directories-first'
+alias la='ls -Fa --color --group-directories-first'
+alias lla='ls -Flah --color --group-directories-first'
+
+# and tree
+alias tree='tree -F --dirsfirst'
