@@ -1,4 +1,4 @@
-include ~/.nano/*.nanorc
+include $ZSH/modules/nanorc/*.nanorc
 
 set linenumbers
 set smarthome
