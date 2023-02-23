@@ -6,5 +6,6 @@
     "files.trimTrailingWhitespace": true,
     "git.confirmSync": false,
     "git.autofetch": true,
-    "workbench.colorTheme": "Dracula"
+    "workbench.colorTheme": "Dracula",
+    "redhat.telemetry.enabled": false
 }
