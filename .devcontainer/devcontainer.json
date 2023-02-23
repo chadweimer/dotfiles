@@ -15,7 +15,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
-	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && ${containerWorkspaceFolder}/script/bootstrap",
+	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && find ${containerWorkspaceFolder}/modules/* -maxdepth 0 -exec git config --global --add safe.directory {} \\; && ${containerWorkspaceFolder}/script/bootstrap",
 
 	// Configure tool-specific properties.
 	// "customizations": {},

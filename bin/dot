@@ -42,6 +42,10 @@ if [ -z "$ZSH" ]; then
 	export ZSH=$HOME/.dotfiles
 fi
 
+# Initialize git submodules
+echo "› Initializing git submodules"
+git submodule update --init
+
 # Install software
 echo "› $ZSH/script/install"
 $ZSH/script/install
