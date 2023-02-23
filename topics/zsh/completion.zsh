@@ -8,3 +8,6 @@ zstyle ':completion:*' rehash true                              # automatically 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# This should always be last, per the documentation in the repo
+source $ZSH/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
