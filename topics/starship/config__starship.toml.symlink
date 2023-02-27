@@ -7,6 +7,10 @@ $localip\
 $shlvl\
 $directory\
 $vcsh\
+$line_break\
+$character"""
+
+right_format = """
 $git_branch\
 $git_commit\
 $git_state\
@@ -77,9 +81,7 @@ $time\
 $status\
 $os\
 $container\
-$shell\
-$line_break\
-$character"""
+$shell"""
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
