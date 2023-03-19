@@ -44,7 +44,7 @@ fi
 
 # Initialize git submodules
 echo "› Initializing git submodules"
-pushd $ZSH && git submodule update --init && popd
+cd $ZSH && git submodule update --init
 
 # Install software
 echo "› $ZSH/script/install"
