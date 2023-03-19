@@ -7,8 +7,9 @@
 
 set -e
 
-parentDirectory="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
-dotfilesDirectory="$(cd "$( dirname "$parentDirectory" )" && pwd -P)"
+if [ -z "$ZSH" ]; then
+	export ZSH=$HOME/.dotfiles
+fi
 
 displayUsageAndExit() {
 	echo "dot -- dotfiles management"
@@ -27,7 +28,7 @@ while test $# -gt 0; do
 			displayUsageAndExit
 			;;
 		"-e"|"--edit")
-			exec "$EDITOR" "$dotfilesDirectory"
+			exec "$EDITOR" "$ZSH"
 			exit
 			;;
 		*)
@@ -37,10 +38,6 @@ while test $# -gt 0; do
 	esac
 	shift
 done
-
-if [ -z "$ZSH" ]; then
-	export ZSH=$HOME/.dotfiles
-fi
 
 # Initialize git submodules
 echo "› Initializing git submodules"
