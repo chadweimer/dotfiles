@@ -7,6 +7,5 @@
   "git.confirmSync": false,
   "git.autofetch": true,
   "workbench.colorTheme": "Dracula",
-  "redhat.telemetry.enabled": false,
-  "dev.containers.dockerPath": "/usr/bin/podman"
+  "redhat.telemetry.enabled": false
 }
