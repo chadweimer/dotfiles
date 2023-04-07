@@ -1,7 +1,7 @@
-if test $(which kubectl) 2> /dev/null; then
+if (( $+commands[kubectl] )); then
     source <(kubectl completion zsh)
 fi
 
-if test $(which helm) 2> /dev/null; then
+if (( $+commands[helm] )); then
     source <(helm completion zsh)
 fi

@@ -1,3 +1,3 @@
-if test $(which npm) 2> /dev/null; then
+if (( $+commands[npm] )); then
     source <(npm completion)
 fi

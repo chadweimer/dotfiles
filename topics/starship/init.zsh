@@ -1,3 +1,3 @@
-if test $(which starship) 2> /dev/null; then
+if (( $+commands[starship] )); then
   source <(starship init zsh)
 fi
