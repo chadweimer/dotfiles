@@ -8,6 +8,5 @@
   "git.autofetch": true,
   "workbench.colorTheme": "Dracula",
   "redhat.telemetry.enabled": false,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "dev.containers.dockerPath": "podman"
+  "diffEditor.ignoreTrimWhitespace": false
 }
