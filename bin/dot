@@ -28,7 +28,7 @@ while test $# -gt 0; do
 			displayUsageAndExit
 			;;
 		"-e"|"--edit")
-			exec "$EDITOR" "$ZSH"
+			exec "$EDITOR" "$ZSH/$2"
 			exit
 			;;
 		*)
