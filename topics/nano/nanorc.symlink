@@ -1,4 +1,4 @@
-include ~/.dotfiles/modules/nanorc/*.nanorc
+include ~/.dotfiles/modules/nano-highlight/*.nanorc
 
 set linenumbers
 set smarthome

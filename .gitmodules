@@ -13,3 +13,6 @@
 [submodule "modules/zsh-syntax-highlighting"]
 	path = modules/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "modules/nano-highlight"]
+	path = modules/nano-highlight
+	url = https://github.com/serialhex/nano-highlight.git
