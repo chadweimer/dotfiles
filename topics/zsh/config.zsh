@@ -88,7 +88,9 @@ export LESS=-R
 
 # Color LS
 export CLICOLOR=true
-eval "$(dircolors -b)"
+if (( $+commands[dircolors] )); then
+  eval "$(dircolors -b)"
+fi
 
 # More completions and autosuggestion
 source $ZSH/modules/zsh-completions/zsh-completions.plugin.zsh
