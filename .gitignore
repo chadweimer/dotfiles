@@ -1,2 +1,3 @@
+bin/devpod
 bin/starship
 topics/git/gitconfig.local.symlink

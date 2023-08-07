@@ -9,5 +9,6 @@
   "workbench.colorTheme": "Dracula",
   "redhat.telemetry.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none"
 }
