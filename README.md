@@ -57,11 +57,12 @@ Run this:
 ```sh
 git clone https://github.com/holman/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-script/bootstrap
+script/bootstrap --prompt
 ```
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
 Everything is configured and tweaked within `~/.dotfiles`.
+The `--prompt` option can be excluded if you're using this in a context where you cannot request user input, in which case any symlinks that would overwrite existing files will be automatically skipped.
 
 The main file you'll want to change right off the bat is `topics/zsh/zshrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
