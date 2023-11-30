@@ -10,5 +10,8 @@
   "redhat.telemetry.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "dotfiles.installCommand": "script/bootstrap",
+  "dotfiles.repository": "https://github.com/chadweimer/dotfiles",
+  "dotfiles.targetPath": "~/.dotfiles"
 }
