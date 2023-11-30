@@ -44,7 +44,7 @@ displayUsageAndExit() {
 }
 
 setup_gitconfig () {
-  if ! [ -f topics/git/gitconfig.local.symlink ]
+  if [ "$skip_all" == "false" ] && ! [ -f topics/git/gitconfig.local.symlink ]
   then
     info 'setup gitconfig'
 
@@ -159,9 +159,9 @@ install_dotfiles () {
 skip_all=true
 while test $# -gt 0; do
   case "$1" in
-		"-h"|"--help")
-			displayUsageAndExit
-			;;
+    "-h"|"--help")
+      displayUsageAndExit
+      ;;
     "-p"|"--prompt")
       skip_all=false
       ;;
