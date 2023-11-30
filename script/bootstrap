@@ -44,18 +44,18 @@ displayUsageAndExit() {
 }
 
 setup_gitconfig () {
+  cat topics/git/gitconfig.symlink.template > topics/git/gitconfig.symlink
+
   if [ "$skip_all" == "false" ] && ! [ -f topics/git/gitconfig.local.symlink ]
   then
     info 'setup gitconfig'
-
-    git_credential='cache'
 
     user ' - What is your github author name?'
     read -e git_authorname
     user ' - What is your github author email?'
     read -e git_authoremail
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" topics/git/gitconfig.local.symlink.example > topics/git/gitconfig.local.symlink
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" topics/git/gitconfig.local.symlink.template > topics/git/gitconfig.local.symlink
 
     success 'gitconfig'
   fi
