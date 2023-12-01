@@ -15,9 +15,6 @@
 	"postStartCommand": "${containerWorkspaceFolder}/script/bootstrap -p && git config --global --add safe.directory ${containerWorkspaceFolder} && find ${containerWorkspaceFolder}/modules/* -maxdepth 0 -exec git config --global --add safe.directory {} \\;",
 	// Configure tool-specific properties.
 	// "customizations": {},
-	"runArgs": [
-		"--userns=keep-id"
-	],
 	"containerUser": "vscode",
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
