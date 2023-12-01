@@ -44,8 +44,6 @@ displayUsageAndExit() {
 }
 
 setup_gitconfig () {
-  cat topics/git/gitconfig.symlink.template > topics/git/gitconfig.symlink
-
   if [ "$skip_all" == "false" ] && ! [ -f topics/git/gitconfig.local.symlink ]
   then
     info 'setup gitconfig'
@@ -62,8 +60,8 @@ setup_gitconfig () {
 }
 
 
-link_file () {
-  local src=$1 dst=$2
+install_file () {
+  local src=$1 dst=$2 link=${3:-true}
 
   local overwrite= backup= skip=
   local action=
@@ -138,8 +136,14 @@ link_file () {
 
   if [ "$skip" != "true" ]  # "false" or empty
   then
-    ln -s "$1" "$2"
-    success "linked $1 to $2"
+    if [ "$link" != "false" ]
+    then
+      ln -s "$src" "$dst"
+      success "linked $src to $dst"
+    else
+      cp "$src" "$dst"
+      success "copied $src to $dst"
+    fi
   fi
 }
 
@@ -152,7 +156,14 @@ install_dotfiles () {
   do
     dst="$HOME/.$(basename "${src%.*}")"
     dst="${dst//__/\/}"
-    link_file "$src" "$dst"
+    install_file "$src" "$dst"
+  done
+
+  for src in $(find -H "$DOTFILES_ROOT/topics" -maxdepth 2 -name '*.nolink' -not -path '*.git*')
+  do
+    dst="$HOME/.$(basename "${src%.*}")"
+    dst="${dst//__/\/}"
+    install_file "$src" "$dst" false
   done
 }
 
