@@ -8,7 +8,7 @@
 set -e
 
 if [ -z "$ZSH" ]; then
-	export ZSH=$HOME/.dotfiles
+	export ZSH=$(dirname $(dirname $0:A))
 fi
 
 displayUsageAndExit() {

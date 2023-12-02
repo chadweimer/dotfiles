@@ -1,6 +1,6 @@
 # shortcut to this dotfiles path is $ZSH
 if [ -z "$ZSH" ]; then
-	export ZSH=$HOME/.dotfiles
+  export ZSH=$(dirname $(dirname $(dirname $(readlink -f $HOME/.zshrc))))
 fi
 
 # your project folder that we can `c [tab]` to
