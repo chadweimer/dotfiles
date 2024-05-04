@@ -8,10 +8,17 @@
   "git.autofetch": true,
   "workbench.colorTheme": "Dracula",
   "redhat.telemetry.enabled": false,
-  "diffEditor.ignoreTrimWhitespace": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   "dotfiles.installCommand": "script/bootstrap",
   "dotfiles.repository": "https://github.com/chadweimer/dotfiles",
-  "dotfiles.targetPath": "~/.dotfiles"
+  "dotfiles.targetPath": "~/.dotfiles",
+  "sonarlint.connectedMode.connections.sonarcloud": [
+    {
+      "organizationKey": "chadweimer",
+      "connectionId": "chadweimer"
+    }
+  ],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "remote.autoForwardPortsSource": "hybrid"
 }
