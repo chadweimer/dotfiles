@@ -2,7 +2,7 @@ fpath=($ZSH/functions $fpath)
 
 autoload -U $ZSH/functions/*(:t)
 
-HISTFILE=~/.zhistory
+HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}"/zsh/history
 HISTSIZE=10000
 SAVEHIST=10000
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
