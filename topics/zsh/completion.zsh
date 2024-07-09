@@ -7,7 +7,7 @@ zstyle ':completion:*' rehash true                              # automatically 
 # Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}"/zsh
 
 # This should always be last, per the documentation in the repo
 source $ZSH/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
