@@ -10,7 +10,7 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = ~/.gitignore
+        excludesfile = ~/.config/git/ignore
         editor = nano
 [apply]
         whitespace = nowarn

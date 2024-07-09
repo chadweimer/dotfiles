@@ -44,7 +44,7 @@ displayUsageAndExit() {
 }
 
 setup_gitconfig () {
-  if [ "$skip_all" == "false" ] && ! [ -f topics/git/gitconfig.local.symlink ]
+  if [ "$skip_all" == "false" ] && ! [ -f topics/git/config__git__config.local.symlink ]
   then
     info 'setup gitconfig'
 
@@ -53,7 +53,7 @@ setup_gitconfig () {
     user ' - What is your github author email?'
     read -e git_authoremail
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" topics/git/gitconfig.local.symlink.template > topics/git/gitconfig.local.symlink
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" topics/git/config__git__config.local.symlink.template > topics/git/config__git__config.local.symlink
 
     success 'gitconfig'
   fi
