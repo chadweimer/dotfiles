@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
@@ -9,6 +9,6 @@ RUN apt-get update \
         ca-certificates \
         openssh-client \
     && rm -rf /var/lib/apt/lists/* \
-    && useradd -ms /bin/zsh vscode
+    && chsh -s /bin/zsh ubuntu
 
-USER vscode
+USER ubuntu
