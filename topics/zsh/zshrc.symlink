@@ -32,6 +32,7 @@ done
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
+rm -f ~/.zcompdump
 compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}"/zsh/zcompdump-"$ZSH_VERSION"
 
 # load every completion after autocomplete loads
