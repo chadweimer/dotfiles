@@ -1,0 +1,8 @@
+#!/bin/zsh
+#
+# watcher allows using things like aliases
+# with the built in watch command
+
+cmd=$1
+shift
+watch --color $(whence $cmd) $@
