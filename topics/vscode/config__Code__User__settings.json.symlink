@@ -6,7 +6,7 @@
   "files.trimTrailingWhitespace": true,
   "git.confirmSync": false,
   "git.autofetch": true,
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula Theme",
   "redhat.telemetry.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
@@ -20,5 +20,6 @@
     }
   ],
   "diffEditor.ignoreTrimWhitespace": false,
-  "remote.autoForwardPortsSource": "hybrid"
+  "remote.autoForwardPortsSource": "hybrid",
+  "workbench.productIconTheme": "material-product-icons"
 }
