@@ -59,6 +59,20 @@ setup_gitconfig () {
   fi
 }
 
+setup_sshconfig () {
+  if [ "$skip_all" == "false" ] && ! [ -f topics/ssh/ssh__config.symlink ]
+  then
+    info 'setup ssh config'
+
+    user ' - What is the name of your primary identify file?'
+    read -e ssh_identity_file
+
+    sed -e "s/IDENTITYFILENAME/$ssh_identity_file/g" topics/ssh/ssh__config.symlink.template > topics/ssh/ssh__config.symlink
+
+    success 'ssh config'
+  fi
+}
+
 
 install_file () {
   local src=$1 dst=$2 link=${3:-true}
@@ -184,6 +198,7 @@ while test $# -gt 0; do
   shift
 done
 
+setup_sshconfig
 setup_gitconfig
 install_dotfiles
 

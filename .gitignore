@@ -2,3 +2,4 @@ bin/devpod
 bin/starship
 topics/git/config__git__config.symlink
 topics/git/config__git__config.local.symlink
+topics/ssh/ssh__config.symlink
