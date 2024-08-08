@@ -13,11 +13,9 @@ elif (( $+commands[ssh-agent] )); then
 
   # Start the ssh agent, if not already running
   if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    eval $(ssh-agent -s) > /dev/null
-    # if [ "$(ssh-add -l)" = "The agent has no identities." ] ; then
-    #     # Auto-add ssh keys to your ssh agent
-    #     # Example:
-    #     # ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
-    # fi
+    ssh-agent -s > "$XDG_RUNTIME_DIR/ssh-agent.env"
+  fi
+  if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
   fi
 fi
