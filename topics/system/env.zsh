@@ -1,5 +1,11 @@
-export EDITOR='nano'
 export LESS='-R --use-color -Dd+r$Du+b'
+
+# Prefer micro, then nano, then whatever the system's default is
+if (( $+commands[micro] )); then
+  export EDITOR='micro'
+elif (( $+commands[nano] )); then
+  export EDITOR='nano'
+fi
 
 # Prefer GNOME Keyring as ssh agent, if available
 if [[ ! -v SSH_AUTH_SOCK && -e $XDG_RUNTIME_DIR/gcr/ssh ]]; then
