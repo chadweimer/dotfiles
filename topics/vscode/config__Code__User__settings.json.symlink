@@ -21,5 +21,6 @@
   ],
   "diffEditor.ignoreTrimWhitespace": false,
   "remote.autoForwardPortsSource": "hybrid",
-  "workbench.productIconTheme": "material-product-icons"
+  "workbench.productIconTheme": "material-product-icons",
+  "github.gitProtocol": "ssh"
 }
