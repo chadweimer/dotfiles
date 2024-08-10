@@ -2,6 +2,7 @@ export LESS='-R --use-color -Dd+r$Du+b'
 
 # Prefer micro, then nano, then whatever the system's default is
 if (( $+commands[micro] )); then
+  export MICRO_TRUECOLOR=1
   export EDITOR='micro'
 elif (( $+commands[nano] )); then
   export EDITOR='nano'
