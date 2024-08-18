@@ -83,9 +83,26 @@ $os\
 $container\
 $shell"""
 
+# Use the color palette
+palette = "dracula"
+
+# Define Dracula color palette
+[palettes.dracula]
+background = "#282a36"
+current_line = "#44475a"
+foreground = "#f8f8f2"
+comment = "#6272a4"
+cyan = "#8be9fd"
+green = "#50fa7b"
+orange = "#ffb86c"
+pink = "#ff79c6"
+purple = "#bd93f9"
+red = "#ff5555"
+yellow = "#f1fa8c"
+
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
-style = "bold #ffb86c"
+style = "bold orange"
 
 [bun]
 format = '\[[$symbol($version)]($style)\]'
@@ -94,15 +111,15 @@ format = '\[[$symbol($version)]($style)\]'
 format = '\[[$symbol($version(-$name))]($style)\]'
 
 [character]
-error_symbol = "[❯](bold #ff5555)"
-success_symbol = "[❯](bold #50fa7b)"
+error_symbol = "[❯](bold red)"
+success_symbol = "[❯](bold green)"
 
 [cmake]
 format = '\[[$symbol($version)]($style)\]'
 
 [cmd_duration]
 format = '\[[⏱ $duration]($style)\]'
-style = "bold #f1fa8c"
+style = "bold yellow"
 
 [cobol]
 format = '\[[$symbol($version)]($style)\]'
@@ -128,7 +145,7 @@ format = '\[[$symbol($version)]($style)\]'
 
 [directory]
 format = '\[[(📁 $path)]($style)[$read_only]($read_only_style)\]'
-style = "bold #50fa7b"
+style = "bold green"
 
 [docker_context]
 format = '\[[$symbol$context]($style)\]'
@@ -150,11 +167,11 @@ format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
 [git_branch]
 format = '\[[$symbol$branch]($style)\]'
-style = "bold #ff79c6"
+style = "bold pink"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'
-style = "bold #ff5555"
+style = "bold red"
 
 [golang]
 format = '\[[$symbol($version)]($style)\]'
@@ -177,7 +194,7 @@ format = '\[[$symbol$branch]($style)\]'
 [hostname]
 format = '[$ssh_symbol$hostname]($style)'
 ssh_symbol = '@'
-style = "bold #bd93f9"
+style = "bold purple"
 
 [java]
 format = '\[[$symbol($version)]($style)\]'
@@ -274,7 +291,7 @@ format = '\[[$time]($style)\]'
 [username]
 format = '[$user]($style)'
 show_always = true
-style_user = "bold #8be9fd"
+style_user = "bold cyan"
 
 [vagrant]
 format = '\[[$symbol($version)]($style)\]'
