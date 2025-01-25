@@ -6,9 +6,8 @@
   "files.trimTrailingWhitespace": true,
   "git.confirmSync": false,
   "git.autofetch": true,
-  "workbench.colorTheme": "Dracula Theme",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "redhat.telemetry.enabled": false,
-  "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   "dotfiles.installCommand": "script/bootstrap",
   "dotfiles.repository": "https://github.com/chadweimer/dotfiles",
@@ -21,6 +20,6 @@
   ],
   "diffEditor.ignoreTrimWhitespace": false,
   "remote.autoForwardPortsSource": "hybrid",
-  "workbench.productIconTheme": "material-product-icons",
-  "github.gitProtocol": "ssh"
+  "github.gitProtocol": "ssh",
+  "workbench.iconTheme": "catppuccin-mocha"
 }
