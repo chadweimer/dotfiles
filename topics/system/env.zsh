@@ -8,6 +8,9 @@ elif (( $+commands[nano] )); then
   export EDITOR='nano'
 fi
 
+# Use $XDG_CONFIG_HOME for ansible configuration
+export ANSIBLE_INVENTORY="${XDG_CONFIG_HOME:-$HOME/.config}"/ansible/inventory.yaml
+
 if [[ -v XDG_RUNTIME_DIR ]]; then
   # Prefer GNOME Keyring as ssh agent, if available
   if [[ ! -v SSH_AUTH_SOCK && -e $XDG_RUNTIME_DIR/gcr/ssh ]]; then
