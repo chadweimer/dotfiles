@@ -16,7 +16,7 @@ typeset -U config_files
 config_files=($ZSH/topics/**/*.zsh)
 
 # Skip all env.zsh files as they are handled by .zprofile
-config_files=${config_files:#*/env.zsh}
+config_files=(${config_files:#*/env.zsh})
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
