@@ -1,0 +1,25 @@
+# shortcut to this dotfiles path is $ZSH
+if [ -z "$ZSH" ]; then
+  export ZSH=$(dirname $(dirname $(dirname $(readlink -f $HOME/.zprofile))))
+fi
+
+# your project folder that we can `c [tab]` to
+export PROJECTS=~/repos
+
+# Stash your environment variables in ~/.profile. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.profile ]]
+then
+  source ~/.profile
+fi
+
+# load the env files
+typeset -U env_files
+env_files=($ZSH/topics/**/env.zsh)
+for file in $env_files
+do
+  source $file
+done
+
+unset env_files
