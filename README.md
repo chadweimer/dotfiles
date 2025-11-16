@@ -39,7 +39,8 @@ There's a few special files in the hierarchy.
   - **topic/**
     - **\*.zsh**: Any files ending in `.zsh` get loaded into your
       environment.
-    - **path.zsh**: Any file named `path.zsh` is loaded first and is
+    - **env.zsh**: Any file named `env.zsh` is loaded by `.zprofile` instead of `.zshrc` so that they apply to all login shells and not just interactive shells.
+    - **path.zsh**: Any file named `path.zsh` is loaded by `.zshrc` first and is
       expected to setup `$PATH` or similar.
     - **completion.zsh**: Any file named `completion.zsh` is loaded
       last and is expected to setup autocomplete.
