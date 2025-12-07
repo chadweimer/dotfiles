@@ -36,7 +36,7 @@
     }
   ],
   "sonarlint.connectedMode.connections.sonarqube": [],
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Layan (Dark)",
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "[dockercompose]": {
@@ -53,5 +53,7 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "yaml.format.singleQuote": true
+  "yaml.format.singleQuote": true,
+  "sonarlint.automaticAnalysis": false,
+  "svelte.enable-ts-plugin": true
 }
