@@ -8,9 +8,11 @@
         status = auto
         branch = auto
         ui = true
+[commit]
+        gpgsign = true
 [core]
         excludesfile = ~/.config/git/ignore
-        editor = nano
+        editor = nano -w
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -37,3 +39,6 @@
 [user]
         name = AUTHORNAME
         email = AUTHOREMAIL
+        signingkey = ~/.ssh/SIGNINGFILENAME.pub
+[gpg]
+        format = ssh

@@ -52,8 +52,10 @@ setup_gitconfig () {
     read -e git_authorname
     user ' - What is your github author email?'
     read -e git_authoremail
+    user ' - What is the name of your ssh key for commit signing?'
+    read -e ssh_signing_file
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" topics/git/config__git__config.local.symlink.template > topics/git/config__git__config.local.symlink
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/SIGNINGFILENAME/$ssh_signing_file/g" topics/git/config__git__config.local.symlink.template > topics/git/config__git__config.local.symlink
 
     success 'gitconfig'
   fi
@@ -64,7 +66,7 @@ setup_sshconfig () {
   then
     info 'setup ssh config'
 
-    user ' - What is the name of your primary identify file?'
+    user ' - What is the name of your primary identity file?'
     read -e ssh_identity_file
 
     sed -e "s/IDENTITYFILENAME/$ssh_identity_file/g" topics/ssh/ssh__config.symlink.template > topics/ssh/ssh__config.symlink
