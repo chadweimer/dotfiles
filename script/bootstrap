@@ -44,7 +44,7 @@ displayUsageAndExit() {
 }
 
 setup_gitconfig () {
-  if [ "$skip_all" == "false" ] && ! [ -f topics/git/config__git__config.local.symlink ]
+  if [ "$skip_all" == "false" ] && ! [ -f topics/git/config__git__config.symlink ]
   then
     info 'setup gitconfig'
 
@@ -55,7 +55,7 @@ setup_gitconfig () {
     user ' - What is the name of your ssh key for commit signing?'
     read -e ssh_signing_file
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/SIGNINGFILENAME/$ssh_signing_file/g" topics/git/config__git__config.local.symlink.template > topics/git/config__git__config.local.symlink
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/SIGNINGKEY/$(cat ~/.ssh/${ssh_signing_file}.pub)/g" topics/git/config__git__config.symlink.template > topics/git/config__git__config.symlink
 
     success 'gitconfig'
   fi

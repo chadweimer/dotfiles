@@ -1,0 +1,56 @@
+# Local/private config goes in the include
+[include]
+path = ./config.local
+
+[alias]
+co = checkout
+count = !git shortlog -sn
+
+[apply]
+whitespace = nowarn
+
+[color]
+diff = auto
+status = auto
+branch = auto
+ui = true
+
+[commit]
+gpgsign = true
+
+[core]
+editor = nano -w
+
+[credential]
+helper = cache --timeout 3600
+
+[difftool]
+prompt = false
+
+[gpg]
+format = ssh
+
+[help]
+autocorrect = 1
+
+[init]
+defaultBranch = main
+
+[mergetool]
+keepBackup = false
+
+[protocol "file"]
+allow = always
+
+[push]
+autoSetupRemote = true
+# See `git help config` (search for push.default)
+# for more information on different options of the below setting.
+#
+# Setting to git 2.0 default to suppress warning message
+default = simple
+
+[user]
+name = AUTHORNAME
+email = AUTHOREMAIL
+signingkey = key::SIGNINGKEY
