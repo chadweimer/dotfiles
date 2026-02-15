@@ -171,14 +171,14 @@ install_dotfiles () {
   for src in $(find -H "$DOTFILES_ROOT/topics" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
-    dst="${dst//__/\/}"
+    dst="${dst//__//}"
     install_file "$src" "$dst"
   done
 
   for src in $(find -H "$DOTFILES_ROOT/topics" -maxdepth 2 -name '*.nolink' -not -path '*.git*')
   do
     dst="$HOME/.$(basename "${src%.*}")"
-    dst="${dst//__/\/}"
+    dst="${dst//__//}"
     install_file "$src" "$dst" false
   done
 }
