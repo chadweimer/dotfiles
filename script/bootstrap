@@ -168,18 +168,49 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false
 
-  for src in $(find -H "$DOTFILES_ROOT/topics" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
-  do
-    dst="$HOME/.$(basename "${src%.*}")"
-    dst="${dst//__//}"
-    install_file "$src" "$dst"
-  done
+  case "$(uname -s)" in
+    Linux)
+      platform="linux"
+      ;;
+    Darwin)
+      platform="macos"
+      ;;
+    CYGWIN*|MINGW32*|MSYS*|MINGW*)
+      platform="windows"
+      ;;
+    *)
+      error "Unsupported platform: $(uname -s)"
+      exit 1
+      ;;
+  esac
 
-  for src in $(find -H "$DOTFILES_ROOT/topics" -maxdepth 2 -name '*.nolink' -not -path '*.git*')
+  # find all files in topics, excluding other platform-specific dirs and .git files,
+  # but include platform-specific files for the current platform, then create
+  # symlinks or copy them based on extension
+  for src in $(find -H "$DOTFILES_ROOT/topics" -maxdepth 2 \
+    \( -path "$DOTFILES_ROOT/topics/platform-*" -a ! -path "$DOTFILES_ROOT/topics/platform-$platform*" -o -path "*/.git/*" \) \
+    -prune -o -type f \( -name '*.symlink' -o -name '*.nolink' \) -print)
   do
-    dst="$HOME/.$(basename "${src%.*}")"
+    # If dst is prefixed with __, do NOT add a dot to the filename, otherwise add a dot to the beginning of the filename
+    if [[ "$(basename "$src")" == __* ]]; then
+      # Trim off the __ prefix first
+      local base_name="$(basename "${src%.*}")"
+      base_name="${base_name#__}"
+
+      dst="$HOME/$base_name"
+    else
+      dst="$HOME/.$(basename "${src%.*}")"
+    fi
     dst="${dst//__//}"
-    install_file "$src" "$dst" false
+
+    case "$src" in
+      *.symlink)
+        install_file "$src" "$dst" ;;
+      *.nolink)
+        install_file "$src" "$dst" false ;;
+      *)
+        ;;
+    esac
   done
 }
 
