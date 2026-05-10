@@ -42,7 +42,7 @@ done
 
 # Initialize git submodules
 echo "› Initializing git submodules"
-cd "$ZSH" && git submodule update --init
+cd "$ZSH" && git pull && git submodule update --init
 
 # Install software
 echo "› $ZSH/script/install"
