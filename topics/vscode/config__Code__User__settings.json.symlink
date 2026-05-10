@@ -54,7 +54,7 @@
     "requirements.txt": ".flake8, .isort.cfg, .python-version, requirements*.in, requirements*.pip, requirements*.txt, tox.ini",
     "rush.json": "*.code-workspace, .browserslist*, .circleci*, .commitlint*, .cspell*, .cursor*, .cz-config.js, .czrc, .dlint.json, .dprint.json*, .eslint*, .firebase*, .flowconfig, .github*, .gitlab*, .gitmojirc.json, .gitpod*, .huskyrc*, .jslint*, .knip.*, .lintstagedrc*, .ls-lint.yml, .markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .oxfmtrc.json, .oxfmtrc.json.bak, .oxfmtrc.jsonc, .oxlintrc.json, .oxlintrc.json.bak, .oxlintrc.jsonc, .pm2*, .pnp.*, .pnpm*, ..pylintrc, .release-please*.json, .releaserc*, .ruff.toml, .sentry*, .shellcheckrc, .simple-git-hooks*, .stackblitz*, .styleci*, .stylelint*, .tazerc*, .textlint*, .tool-versions, .travis*, .versionrc*, .vscode*, .watchman*, .windsurfrules, .xo-config*, .yamllint*, .yarnrc*, Procfile, alejandra.toml, apollo.config.*, appveyor*, azure-pipelines*, biome.json*, bower.json, build.config.*, bun.lock, bun.lockb, bunfig.toml, colada.options.ts, commitlint*, crowdin*, cspell*, cz.config.*, dangerfile*, dlint.json, dprint.json*, ec.config.*, electron-builder.*, eslint*, firebase.json, grunt*, gulp*, jenkins*, knip.*, lefthook.*, lerna*, lint-staged*, nest-cli.*, netlify*, nixpacks*, nodemon*, npm-shrinkwrap.json, nx.*, oxlint.config.*, package-lock.json, package.nls*.json, phpcs.xml, pm2.*, pnpm*, pullapprove*, pyrightconfig.json, release-please*.json, release-tasks.sh, release.config.*, renovate*, rolldown.config.*, rollup.config.*, rspack*, ruff.toml, sentry.*.config.ts, simple-git-hooks*, sonar-project.properties, stylelint*, taze.config.*, tsdown.config.*, tslint*, tsup.config.*, turbo*, typedoc*, unlighthouse*, vercel*, vetur.config.*, webpack*, workspace.json, wrangler.*, xo.config.*, yarn*",
     "sanity.config.*": "sanity.cli.*, sanity.types.ts, schema.json",
-    "setup.cfg": .flake8, .isort.cfg, .python-version, MANIFEST.in, requirements*.in, requirements*.pip, requirements*.txt, setup.cfg, tox.ini",
+    "setup.cfg": ".flake8, .isort.cfg, .python-version, MANIFEST.in, requirements*.in, requirements*.pip, requirements*.txt, setup.cfg, tox.ini",
     "setup.py": ".flake8, .isort.cfg, .python-version, MANIFEST.in, requirements*.in, requirements*.pip, requirements*.txt, setup.cfg, setup.py, tox.ini",
     "shims.d.ts": "*.d.ts",
     "stencil.config.ts": "stencil.*.js, stencil.*.config.ts",
@@ -82,8 +82,8 @@
     "*.css": "$(capture).css.map, $(capture).*.css",
     "*.cxx": "$(capture).hpp, $(capture).h, $(capture).hxx, $(capture).hh",
     "*.dart": "$(capture).freezed.dart, $(capture).g.dart, $(capture).mapper.dart",
-    "*.db": "$(capture).$(extname)-*",,
-    "*.db3": "$(capture).$(extname)-*",,
+    "*.db": "$(capture).$(extname)-*",
+    "*.db3": "$(capture).$(extname)-*",
     "*.ex": "$(capture).html.eex, $(capture).html.heex, $(capture).html.leex",
     "*.fs": "$(capture).fs.js, $(capture).fs.js.map, $(capture).fs.jsx, $(capture).fs.ts, $(capture).fs.tsx, $(capture).fs.rs, $(capture).fs.php, $(capture).fs.dart",
     "*.gd": "$(capture).gd.uid",
@@ -134,7 +134,6 @@
   ],
   "sonarlint.connectedMode.connections.sonarqube": [],
   "svelte.enable-ts-plugin": true,
-  "workbench.colorTheme": "Layan (Dark)",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   "yaml.format.singleQuote": true,
@@ -151,5 +150,11 @@
   },
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  }
+  },
+  "docker.extension.enableComposeLanguageServer": false,
+  "go.coverageDecorator": {
+    "uncoveredBorderColor": "rgba(128,64,64,0.1)",
+    "uncoveredHighlightColor": "rgba(128,64,64,0.05)"
+  },
+  "chat.viewSessions.orientation": "stacked"
 }
