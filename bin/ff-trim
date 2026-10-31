@@ -1,3 +1,8 @@
 #!/bin/sh
 
-ffmpeg -i "$1" -ss 00:00:00 -to $3 -c copy "$2"
+input=$1
+output=$2
+start=${4:-00:00:00}
+end=$3
+
+ffmpeg -i "$input" -ss $start -to $end -c copy "$output"

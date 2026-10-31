@@ -124,7 +124,7 @@
   "github.gitProtocol": "ssh",
   "redhat.telemetry.enabled": false,
   "remote.autoForwardPortsSource": "hybrid",
-  "sonarlint.automaticAnalysis": false,
+  "sonarlint.automaticAnalysis": true,
   "sonarlint.connectedMode.connections.sonarcloud": [
     {
       "connectionId": "chadweimer",
@@ -152,9 +152,14 @@
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "docker.extension.enableComposeLanguageServer": false,
-  "go.coverageDecorator": {
-    "uncoveredBorderColor": "rgba(128,64,64,0.1)",
-    "uncoveredHighlightColor": "rgba(128,64,64,0.05)"
-  },
-  "chat.viewSessions.orientation": "stacked"
+  "chat.viewSessions.orientation": "stacked",
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
+  "go.coverageOptions": "showUncoveredCodeOnly"
 }
