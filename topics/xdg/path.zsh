@@ -5,4 +5,3 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
 export ANSIBLE_HOME="${XDG_DATA_HOME}/ansible"
 export CUDA_CACHE_PATH="${XDG_CACHE_HOME}"/nv
-export DOTNET_CLI_HOME="${XDG_DATA_HOME}"/dotnet
